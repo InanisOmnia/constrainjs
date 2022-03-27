@@ -69,11 +69,17 @@ class ConfigSchema {
 	}
 
 	parse(conf, schema, hierarchy) {
-		const object = {};
+		// reconstructs a copy of the object
+		// const object = {};
+		// for (let key of Object.keys(schema)) {
+		// 	object[key] = this.figureStrategy(conf, schema[key], [...hierarchy, key]);
+		// }
+		// return object;
+
 		for (let key of Object.keys(schema)) {
 			object[key] = this.figureStrategy(conf, schema[key], [...hierarchy, key]);
 		}
-		return object;
+		return conf;
 	}
 }
 

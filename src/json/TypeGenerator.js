@@ -3,6 +3,7 @@
  * not required for js users
  */
 
+const ConfigSchema = require('./ConfigSchema');
 const {CType} = require("./CTypes");
 
 class TypeGenerator {
@@ -90,5 +91,8 @@ class TypeGenerator {
 const typeGenerator = new TypeGenerator();
 
 module.exports = function generate(schema, withDef) {
+	if(schema instanceof ConfigSchema) {
+		return typeGenerator.generateSchemaTypes(schema.schema, withDef);	
+	}
 	return typeGenerator.generateSchemaTypes(schema, withDef);
 }

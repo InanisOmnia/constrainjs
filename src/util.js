@@ -14,7 +14,7 @@ const Utils = require("util");
  * @return {object} A new object with the elements copied from the copyFrom object
  *
  */
-module.exports.cloneDeep = function cloneDeep(parent, depth, circular, prototype) {
+function cloneDeep(parent, depth, circular, prototype) {
 	// maintain two arrays for circular references, where corresponding parents
 	// and children have the same index
 	var allParents = [];
@@ -81,7 +81,7 @@ module.exports.cloneDeep = function cloneDeep(parent, depth, circular, prototype
 	}
 
 	return _clone(parent, depth);
-};
+}
 
 /**
  * Sets a value at the path (given as a string list) of a given object no matter the current content depth
@@ -92,7 +92,7 @@ module.exports.cloneDeep = function cloneDeep(parent, depth, circular, prototype
  * @param path {array[string]} - Array path to the property
  * @param value {*} - value to set, ignoring null
  */
-module.exports.setPath = function setPath(object, path, value) {
+function setPath(object, path, value) {
 	var nextKey = null;
 	if (value === null || path.length === 0) {
 		return;
@@ -106,7 +106,7 @@ module.exports.setPath = function setPath(object, path, value) {
 		}
 		util.setPath(object[nextKey], path, value);
 	}
-};
+}
 
 /**
  * Return true if two objects have equal contents.
@@ -118,7 +118,7 @@ module.exports.setPath = function setPath(object, path, value) {
  * @param depth {integer} An optional depth to prevent recursion.  Default: 20.
  * @return {boolean} True if both objects have equivalent contents
  */
-module.exports.equalsDeep = function equalsDeep(object1, object2, depth) {
+function equalsDeep(object1, object2, depth) {
 	// Recursion detection
 	var t = this;
 	depth = depth === null ? DEFAULT_CLONE_DEPTH : depth;
@@ -160,7 +160,7 @@ module.exports.equalsDeep = function equalsDeep(object1, object2, depth) {
 
 	// Test passed.
 	return true;
-};
+}
 
 /**
  * Returns an object containing all elements that differ between two objects.
@@ -182,7 +182,7 @@ module.exports.equalsDeep = function equalsDeep(object1, object2, depth) {
  * @return {object} A differential object, which if extended onto object1 would
  *                  result in object2.
  */
-module.exports.diffDeep = function diffDeep(object1, object2, depth) {
+function diffDeep(object1, object2, depth) {
 	// Recursion detection
 	var t = this,
 		diff = {};
@@ -211,7 +211,7 @@ module.exports.diffDeep = function diffDeep(object1, object2, depth) {
 
 	// Return the diff object
 	return diff;
-};
+}
 
 /**
  * Is the specified argument a regular javascript object?
@@ -223,9 +223,9 @@ module.exports.diffDeep = function diffDeep(object1, object2, depth) {
  * @param obj {*} An argument of any type.
  * @return {boolean} TRUE if the arg is an object, FALSE if not
  */
-module.exports.isObject = function isObject(obj) {
+function isObject(obj) {
 	return obj !== null && typeof obj === "object" && !Array.isArray(obj);
-};
+}
 
 /**
  * Is the specified argument a javascript promise?
@@ -235,9 +235,9 @@ module.exports.isObject = function isObject(obj) {
  * @param obj {*} An argument of any type.
  * @returns {boolean}
  */
-module.exports.isPromise = function isPromise(obj) {
+function isPromise(obj) {
 	return Object.prototype.toString.call(obj) === "[object Promise]";
-};
+}
 
 /**
  * Returns a new deep copy of the obj.
@@ -245,6 +245,15 @@ module.exports.isPromise = function isPromise(obj) {
  * @param {Object} obj The object to copy and serialize
  * @returns {Object} The cloned object
  */
-module.exports.toObject = function toObject(obj) {
+function toObject(obj) {
 	return JSON.parse(JSON.stringify(obj));
+}
+module.exports = {
+	cloneDeep,
+	setPath,
+	equalsDeep,
+	diffDeep,
+	isObject,
+	isPromise,
+	toObject
 };

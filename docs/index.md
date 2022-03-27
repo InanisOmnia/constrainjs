@@ -1,0 +1,3 @@
+# Documentation
+
+[Changelog](changelog.md)

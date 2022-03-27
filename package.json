@@ -1,14 +1,14 @@
 {
-  "name": "json-schema",
+  "name": "constrainjs",
   "version": "1.0.0",
-  "description": "A schema definition package for JSON files and objects",
+  "description": "A schema definition package for configuration JSON files and objects",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LordFarquhar/json-schema.git"
+    "url": "git+https://github.com/LordFarquhar/constrainjs.git"
   },
   "keywords": [
     "schema",
@@ -21,7 +21,7 @@
   "author": "Inanis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LordFarquhar/json-schema/issues"
+    "url": "https://github.com/LordFarquhar/constrainjs/issues"
   },
-  "homepage": "https://github.com/LordFarquhar/json-schema#readme"
+  "homepage": "https://github.com/LordFarquhar/constrainjs#readme"
 }
