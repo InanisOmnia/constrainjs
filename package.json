@@ -1,0 +1,27 @@
+{
+  "name": "json-schema",
+  "version": "1.0.0",
+  "description": "A schema definition package for JSON files and objects",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordFarquhar/json-schema.git"
+  },
+  "keywords": [
+    "schema",
+    "json",
+    "definition",
+    "ts",
+    "js",
+    "config"
+  ],
+  "author": "Inanis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LordFarquhar/json-schema/issues"
+  },
+  "homepage": "https://github.com/LordFarquhar/json-schema#readme"
+}
