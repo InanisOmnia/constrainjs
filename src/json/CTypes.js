@@ -64,8 +64,8 @@ class CType {
 		this.typeName = type;
 		this.options = options;
 
-		this.optional = this.options.optional;
-		this.nestedSchema = this.options.nestedSchema;
+		this.optional = this.options?.optional;
+		this.nestedSchema = this.options?.nestedSchema;
 	}
 }
 
