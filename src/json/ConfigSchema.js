@@ -77,7 +77,7 @@ class ConfigSchema {
 		// return object;
 
 		for (let key of Object.keys(schema)) {
-			object[key] = this.figureStrategy(conf, schema[key], [...hierarchy, key]);
+			this.figureStrategy(conf, schema[key], [...hierarchy, key]);
 		}
 		return conf;
 	}
