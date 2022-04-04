@@ -12,6 +12,7 @@
 		- [Getting .ts Type Definition](#getting-ts-type-definition)
 	- [Defining Configurations](#defining-configurations)
 	- [Testing Configuration Validity](#testing-configuration-validity)
+- [Compatibility](#compatibility)
 
 > **See our [docs](docs/index.md)** for further documentation
 
@@ -90,3 +91,7 @@ schema.parseConfig(conf)
 ```
 
 The method throws an error if the configuration does not conform to the schema, otherwise the configuration is returned.
+
+# Compatibility
+
+See [compatibility table](docs/compatibility.md)

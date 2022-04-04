@@ -1,5 +1,4 @@
 // PLEASE NOTE!
-
 // below example is for an older version of this package and WILL NOT run correctly
 
 const {

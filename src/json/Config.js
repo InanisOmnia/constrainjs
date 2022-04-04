@@ -1,7 +1,14 @@
+const util = require("../util");
+
 class Config {
-	constructor(conf) {
-		// TODO: parse conf as valid JSON
-        this.conf = conf;
+	constructor(raw) {
+		// if(util.isObject(raw)) {
+
+		// } else if(typeof raw === "string") {
+		// 	// TODO: allow filepath and read it myself or a normal object
+		// }
+		// // TODO: parse conf as valid JSON
+        this.raw = raw;
     }
 
 	/**
@@ -32,7 +39,7 @@ class Config {
 			throw new Error("Calling config.get with null or undefined argument");
 		}
 
-		const value = this.#getImpl(this.conf, property);
+		const value = this.#getImpl(this.raw, property);
 
 		// Produce an exception if the property doesn't exist
 		if (value === undefined) {
@@ -47,7 +54,7 @@ class Config {
 		if (property === null || property === undefined) {
 			return false;
 		}
-		return this.#getImpl(this.conf, property) !== undefined;
+		return this.#getImpl(this.raw, property) !== undefined;
 	}
 }
 
