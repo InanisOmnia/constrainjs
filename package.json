@@ -1,6 +1,6 @@
 {
   "name": "constrainjs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A schema definition package for configuration JSON files and objects",
   "main": "src/index.js",
   "scripts": {
